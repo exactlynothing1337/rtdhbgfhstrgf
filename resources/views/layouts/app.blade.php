@@ -24,6 +24,8 @@
                 <a href="{{ route('catalog.index') }}" @class(['nav__link', 'is-active' => request()->routeIs('catalog.index')])>Расписание</a>
                 <a href="{{ route('catalog.hall') }}" @class(['nav__link', 'is-active' => request()->routeIs('catalog.hall')])>Залы</a>
                 <a href="{{ route('catalog.stats') }}" @class(['nav__link', 'is-active' => request()->routeIs('catalog.stats')])>Статистика</a>
+                <a href="{{ route('trainings.index') }}" @class(['nav__link', 'is-active' => request()->routeIs('trainings.*')])>Тренировки · БД</a>
+                <a href="{{ route('halls.index') }}" @class(['nav__link', 'is-active' => request()->routeIs('halls.*')])>Залы · БД</a>
                 <a href="{{ route('feedback.form') }}" @class(['nav__link', 'is-active' => request()->routeIs('feedback.*')])>Обратная связь</a>
             </nav>
         </div>

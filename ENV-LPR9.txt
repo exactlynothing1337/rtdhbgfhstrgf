@@ -1,0 +1,13 @@
+# Replace the DB_* block in .env (and refresh LAB_CODE at the start of the lesson):
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1          # in OSPanel 6 - the module name, e.g. MySQL-8.4
+DB_PORT=3306
+DB_DATABASE=lpr_kokoryshkin
+DB_USERNAME=root
+DB_PASSWORD=
+APP_FAKER_LOCALE=ru_RU
+
+# Then:
+#   php artisan config:clear
+#   php artisan migrate:fresh --seed
+#   php artisan serve --port=8107

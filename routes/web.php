@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\HallController;
+use App\Http\Controllers\TrainingController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,10 @@ Route::prefix('catalog')->name('catalog.')->controller(CatalogController::class)
         ->where('code', '[A-Z]{3}-[0-9]{5}')->name('code'); // CODE_L = 3 буквы, CODE_D = 5 цифр
     Route::get('/{id}', 'show')->whereNumber('id')->name('show');
 });
+
+// ЛПР № 9: CRUD на базе данных (show не используется)
+Route::resource('trainings', TrainingController::class)->except(['show']);
+Route::resource('halls', HallController::class)->except(['show']);
 
 Route::get('/feedback', [PageController::class, 'feedbackForm'])->name('feedback.form');
 Route::post('/feedback', [PageController::class, 'feedbackSend'])->name('feedback.send');
